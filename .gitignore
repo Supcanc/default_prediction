@@ -1,2 +1,8 @@
 # venv
 default-prediction/
+
+# secure information
+db_connect_args.py
+
+# cache
+__pycache__/
