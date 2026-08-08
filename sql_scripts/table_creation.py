@@ -13,7 +13,7 @@ db = mysql.connector.connect(
 cursor = db.cursor()
 
 cursor.execute("""
-CREATE TABLE credit_risk(
+CREATE TABLE IF NOT EXISTS credit_risk(
     client_ID CHAR(10) PRIMARY KEY,
     person_age TINYINT UNSIGNED,
     person_income MEDIUMINT,
@@ -25,7 +25,7 @@ CREATE TABLE credit_risk(
     loan_int_rate DECIMAL(4, 2),
     loan_status TINYINT UNSIGNED,
     loan_percent_income DECIMAL(3, 2),
-    cb_person_default_on_file BOOLEAN,
+    cb_person_default_on_file CHAR(1),
     cb_person_cred_hist_length TINYINT UNSIGNED,
     gender VARCHAR(6),
     marital_status VARCHAR(10),
